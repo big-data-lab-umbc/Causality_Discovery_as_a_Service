@@ -5,8 +5,8 @@ In ./scripts folder, we provide bash scripts for setting causality Spark cluster
 Before running scripts, you need to setup ssh permission for your cluster. Remember fill out all parameters before running scripts.
    
 
-## Data Driven Causality Discovery as a Service on Amazon Web Service (AWS) EMR Cloud via SDK
-We provide fabfile.py with run_interface.py for running causality on EMR automatically.
+## Data Driven Causality Discovery as a Service on Cloud via SDK
+We provide fabfile.py with run_interface.py for running causality on AWS automatically.
   
 ### Prerequirement:  
 Boto  
@@ -51,25 +51,12 @@ DeleteCluster()
 ```
 
 
-## Data Driven Causality Discovery as a Service on AWS EMR Cloud via CloudFormation  
-In ./CloudFormation folder, we provide tamplates for running causality on EMR automatically. 
+## Data Driven Causality Discovery as a Service on Cloud via CloudFormation  
+In ./CloudFormation folder, we provide tamplates for running causality on AWS automatically. 
 Start CloudFormation from: https://aws.amazon.com/cloudformation/.  
   
 
-## Data Driven Causality Discovery as a Service on AWS EMR Cloud via Serverless Application Model (SAM)  
-In ./SAM folder, we provide tamplates for running causality on EMR automatically. 
+## Data Driven Causality Discovery as a Service on Cloud via Web Server 
+In ./Webserver folder, we provide 
   
-### Prerequirement:  
-AWS SAM CLI: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install-linux.html  
- 
-### Steps:
-1. Start SAM from your command line: 
-```bash
-sam validate -t ./CausalityAutomation.json 
-sam build -t ./CausalityAutomation.json  
-sam deploy --guided
-```
 
-2. Send events:  
-SampleEvent1 invokes by sending from AWS Lambda Function: https://aws.amazon.com/lambda/.   
-SampleEvent2 invokes by upload json files to AWS S3.  
