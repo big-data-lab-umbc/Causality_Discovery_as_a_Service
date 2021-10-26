@@ -57,6 +57,6 @@ Start CloudFormation from: https://aws.amazon.com/cloudformation/.
   
 
 ## Data Driven Causality Discovery as a Service on Cloud via Web Server 
-In ./Webserver folder, we provide 
+In ./Webserver folder, we provide Lambda functions and steps of calling RESTful APIs for running causality on AWS automatically. 
   
 
