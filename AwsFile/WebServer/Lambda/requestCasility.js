@@ -1,6 +1,3 @@
-// Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
-// SPDX-License-Identifier: MIT-0
-
 const randomBytes = require('crypto').randomBytes;
 
 const AWS = require('aws-sdk');
@@ -9,29 +6,11 @@ AWS.config.update({ region: "us-west-2" });
 const SSM = new AWS.SSM();
 const ddb = new AWS.DynamoDB.DocumentClient();
 
-const fleet = [
-    {
-        Name: 'Bucephalus',
-        Color: 'Golden',
-        Gender: 'Male',
-    },
-    {
-        Name: 'Shadowfax',
-        Color: 'White',
-        Gender: 'Male',
-    },
-    {
-        Name: 'Rocinante',
-        Color: 'Yellow',
-        Gender: 'Female',
-    },
-];
-
 exports.handler = (event, context, callback) => {
-    // if (!event.requestContext.authorizer) {
-    //   errorResponse('Authorization not configured', context.awsRequestId, callback);
-    //   return;
-    // }
+    //if (!event.requestContext.authorizer) {
+    //  errorResponse('Authorization not configured', context.awsRequestId, callback);
+    //  return;
+    //}
 
     const rideId = toUrlString(randomBytes(16));
     console.log('Received event (', rideId, '): ', event);
@@ -39,7 +18,7 @@ exports.handler = (event, context, callback) => {
     // Because we're using a Cognito User Pools authorizer, all of the claims
     // included in the authentication token are provided in the request context.
     // This includes the username as well as other attributes.
-    // const username = event.requestContext.authorizer.claims['cognito:username'];
+    //const username = event.requestContext.authorizer.claims['cognito:username'];
 
     // The body field of the event in a proxy integration is a raw string.
     // In order to extract meaningful values, we need to first parse this string
@@ -81,14 +60,9 @@ exports.handler = (event, context, callback) => {
     });
 };
 
-// This is where you would implement logic to find the optimal unicorn for
-// this ride (possibly invoking another Lambda function as a microservice.)
-// For simplicity, we'll just pick a unicorn at random.
 function findMasterToRun(command,instanceIdList) {
     console.log('Runing Spark command ', command, ' on Master ', instanceIdList);
     return new Promise(function(resolve, reject) {
-      //TODO: Place the command you wish to run over here 
-      // or better, send it as an argument to your Lambda function!
       //const command = 'ls -al';
       const params = {
         InstanceIds: [instanceIdList],
