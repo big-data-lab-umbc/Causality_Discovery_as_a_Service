@@ -35,11 +35,14 @@ DeleteCluster()
 ```
 
 
-## Data Driven Causality Discovery as a Service on Cloud via CloudFormation  
+## Data Driven Causality Discovery as a Service on AWS via CloudFormation  
 In ./AwsFile/CloudFormation folder, we provide tamplates for running causality automatically. 
 Start CloudFormation from: https://aws.amazon.com/cloudformation/.  
   
 
-## Data Driven Causality Discovery as a Service on Cloud via WebServer 
+## Data Driven Causality Discovery as a Service on AWS via WebServer 
 In ./AwsFile/WebServer folder, we provide Lambda functions and steps of calling RESTful APIs for running causality automatically. 
   
+## Data Driven Causality Discovery as a Service on Azure via ResourcesManager 
+In ./AzureFile/CloudFormation folder, we provide ARM tamplates for running causality automatically. 
+Start Tamplate Deployment from: https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/quickstart-create-templates-use-the-portal.  
